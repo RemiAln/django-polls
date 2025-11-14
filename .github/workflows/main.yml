@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: "3.9"
 
-      - name: Install dependencies
+      - name:Install flake 8
         run: |
           python -m pip install --upgrade pip
           pip install flake8
@@ -38,13 +38,19 @@ jobs:
         with:
           python-version: "3.9"
 
-      - name: Install dependencies
+      - name: Install django
         run: |
           python -m pip install --upgrade pip
           pip install django
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Run Django tests
+      - name: Django tests
         run: |
           python manage.py migrate --noinput
           python manage.py test
+
+      - name: Build docker Image
+        run : |
+          docker build 
+          
+
