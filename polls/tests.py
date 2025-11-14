@@ -61,7 +61,7 @@ class QuestionIndexViewTests(TestCase):
         self.assertQuerysetEqual(
             response.context['latest_question_list'],
             ['<Question: Past question.>'],
-            transform=repr  # <-- important
+            transform=repr
         )
 
     def test_future_question(self):
@@ -77,7 +77,7 @@ class QuestionIndexViewTests(TestCase):
         self.assertQuerysetEqual(
             response.context['latest_question_list'],
             ['<Question: Past question.>'],
-            transform=repr  # <-- important
+            transform=repr
         )
 
     def test_two_past_questions(self):
@@ -87,7 +87,7 @@ class QuestionIndexViewTests(TestCase):
         self.assertQuerysetEqual(
             response.context['latest_question_list'],
             ['<Question: Past question 2.>', '<Question: Past question 1.>'],
-            transform=repr  # <-- important
+            transform=repr
         )
 
 class QuestionDetailViewTests(TestCase):
