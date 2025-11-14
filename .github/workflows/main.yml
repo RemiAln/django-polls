@@ -26,5 +26,7 @@ jobs:
       - name: Test Django
         run: |
           python manage.py test
+
+          
       
 
